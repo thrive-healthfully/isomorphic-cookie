@@ -37,7 +37,8 @@
     "dev-express": "npm run transpile && node_modules/concurrently/src/main.js --kill-others \"npm run express\" \"npm run dev-server\"",
     "clean": "rm -rf dist && mkdir dist",
     "build": "npm run clean && npm run transpile && node node_modules/webpack/bin/webpack.js --config webpack.config.js",
-    "transpile": "babel src --out-dir dist --ignore /__tests__/"
+    "transpile": "babel src --out-dir dist --ignore /__tests__/",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "cookie": "^0.1.2",
